@@ -1,0 +1,20 @@
+name: SDKMAN! Vendor Release Plugin
+description: Publish SDKMAN! Candidate releases
+inputs:
+  candidate:
+    description: The candidate name
+    required: true
+  version:
+    description: The candidate version
+    required: true
+  url:
+    description: The URL to the binary
+    required: true
+runs:
+  using: docker
+  image: 'docker://curlimages/curl:7.72.0'
+  args:
+    - -X POST
+    - '-H "Content-Type: application/json"'
+    - '-d ''{"candidate": "${{inputs.candidate}}", "version": "${{inputs.version}}", "url": "${{inputs.url"}}}'''
+    - https://vendors.sdkman.io/release
