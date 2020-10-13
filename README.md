@@ -27,7 +27,7 @@ A GitHub Action to release new Candidate versions via SDKMAN!'s Vendor API.
 ## Example usage
 
 ```yml
-uses: helpermethod/sdkman-vendor-release-action@v1
+uses: helpermethod/sdkman-vendor-release-action@v0.0.1
 with:
   consumer-key: 5f202e7ab75f00af194c61cc07ae6b0c
   consumer-token: ${{secrets.CONSUMER_TOKEN}}
