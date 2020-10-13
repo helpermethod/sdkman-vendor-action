@@ -1,20 +1,28 @@
 name: SDKMAN! Vendor Release Plugin
 description: Release new Candidate versions via SDKMAN!'s Vendor API.
 inputs:
+  consumer-key:
+    description: The unique identifier of the Consumer
+    required: true
+  consumer-token:
+    description: The API token of the Consumer
+    required: true
   candidate:
-    description: The name of the candidate to release
+    description: The name of the Candidate to release
     required: true
   version:
-    description: The version of the candidate to release
+    description: The version of the Candidate to release
     required: true
   url:
-    description: The URL to the binary
+    description: The URL pointing to the binary
     required: true
 runs:
   using: docker
   image: 'docker://curlimages/curl:7.72.0'
   args:
     - -X POST
+    - -H 'Consumer-Key: ${{inputs.consumer-key}}'
+    - -H 'Consumer-Token: ${{inputs.consumer-token}}'
     - -H 'Content-Type: application/json'
     - -d '{"candidate": "${{inputs.candidate}}", "version": "${{inputs.version}}", "url": "${{inputs.url}"}}'
     - https://vendors.sdkman.io/release
