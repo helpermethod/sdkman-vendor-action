@@ -1,11 +1,11 @@
 name: SDKMAN! Vendor Release Plugin
-description: Publish SDKMAN! Candidate releases
+description: Release new Candidate versions via SDKMAN!'s Vendor API.
 inputs:
   candidate:
-    description: The candidate name
+    description: The name of the candidate to release
     required: true
   version:
-    description: The candidate version
+    description: The version of the candidate to release
     required: true
   url:
     description: The URL to the binary

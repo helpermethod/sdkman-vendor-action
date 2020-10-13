@@ -15,3 +15,11 @@ A GitHub Action to release new Candidate versions via SDKMAN!'s Vendor API.
 ### `url`
 
 **Required** The URL pointing to the binary
+
+## Example usage
+
+uses: helpermethod/sdkman-vendor-release-action@v1
+with:
+  candidate: maven
+  version: 3.6.3
+  url: https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip
