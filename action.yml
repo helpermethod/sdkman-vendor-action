@@ -15,6 +15,6 @@ runs:
   image: 'docker://curlimages/curl:7.72.0'
   args:
     - -X POST
-    - '-H "Content-Type: application/json"'
-    - '-d ''{"candidate": "${{inputs.candidate}}", "version": "${{inputs.version}}", "url": "${{inputs.url"}}}'''
+    - -H 'Content-Type: application/json'
+    - -d '{"candidate": "${{inputs.candidate}}", "version": "${{inputs.version}}", "url": "${{inputs.url}"}}'
     - https://vendors.sdkman.io/release
