@@ -1,4 +1,4 @@
-name: SDKMAN! Vendor Release Plugin
+name: SDKMAN! Vendor Release Action
 description: Release new Candidate versions via SDKMAN!'s Vendor API.
 inputs:
   consumer-key:
