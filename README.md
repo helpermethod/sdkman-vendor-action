@@ -1,6 +1,6 @@
 # SDKMAN! Vendor Release Action
 
-A GitHub Action to release new Candidate versions via SDKMAN!'s Vendor API.
+A GitHub Action to release new Candidate versions via [SDKMAN!](https://sdkman.io/)'s Vendor API.
 
 ## Inputs
 
