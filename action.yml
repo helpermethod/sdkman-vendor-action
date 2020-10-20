@@ -17,13 +17,5 @@ inputs:
     description: The URL pointing to the binary
     required: true
 runs:
-  using: docker
-  image: 'docker://curlimages/curl:7.72.0'
-  args:
-    - -X POST
-    - '-H "Consumer-Key: ${{inputs.consumer-key}}"'
-    - '-H "Consumer-Token: ${{inputs.consumer-token}}"'
-    - '-H "Content-Type: application/json"'
-    - >-
-      -d '{"candidate": "${{inputs.candidate}}", "version": "${{inputs.version}}", "url": "${{inputs.url}}"}'
-    - https://vendors.sdkman.io/release
+  using: node12
+  main: index.js
