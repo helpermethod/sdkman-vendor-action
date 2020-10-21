@@ -20,7 +20,7 @@ const options = {
 }
 
 request('https://vendors.sdkman.io/release', options, await response => {
-  if (response.statusCode === '201') return
+  if (response.statusCode === 201) return
 
   let data = []
 
@@ -28,7 +28,7 @@ request('https://vendors.sdkman.io/release', options, await response => {
     data.push(chunk)
   }
 
-  core.setFailed(body)
+  core.setFailed(Buffer.concat(data).toString())
 })
 
 Readable.from(data).pipe(request)
