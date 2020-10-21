@@ -1,0 +1,23 @@
+{
+  "name": "sdkman-vendor-release-action",
+  "version": "1.0.0",
+  "description": "A GitHub Action to release new Candidate versions via [SDKMAN!](https://sdkman.io/)'s Vendor API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helpermethod/sdkman-vendor-release-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helpermethod/sdkman-vendor-release-action/issues"
+  },
+  "homepage": "https://github.com/helpermethod/sdkman-vendor-release-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6"
+  }
+}

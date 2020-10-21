@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    name: CI
+    steps:
+      - name: Publish Groovy candidate version  
+        uses: helpermethod/sdkman-vendor-release-action@master
+        with:
+          consumer-key: 5f202e7ab75f00af194c61cc07ae6b0c
+          consumer-token: ${{secrets.CONSUMER_TOKEN}}
+          candidate: groovy
+          version: 3.0.6
+          url: 'https://dl.bintray.com/groovy/maven/apache-groovy-binary-3.0.6.zip'
