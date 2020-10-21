@@ -13,13 +13,13 @@ const options = {
   headers: {
     'Consumer-Key': core.getInput('consumer-key'),
     'Consumer-Token': core.getInput('consumer-token'),
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
     'Content-Length': data.length
   },
   agent: false
 }
 
-request('https://vendors.sdkman.io/release', options, await response => {
+request('https://vendors.sdkman.io/release', options, async response => {
   if (response.statusCode === 201) return
 
   let data = []
