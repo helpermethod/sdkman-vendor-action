@@ -19,7 +19,16 @@ const options = {
   agent: false
 }
 
-request('https://vendors.sdkman.io/release', options, response => response.pipe(process.stdout))
-  .on('error', error => core.setFailed(error.message))
+request('https://vendors.sdkman.io/release', options, await response => {
+  if (response.statusCode === '201') return
+
+  let data = []
+
+  for await(const chunk in response) {
+    data.push(chunk)
+  }
+
+  core.setFailed(body)
+})
 
 Readable.from(data).pipe(request)
