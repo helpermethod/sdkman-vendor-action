@@ -24,7 +24,7 @@ request('https://vendors.sdkman.io/release', options, async response => {
 
   let data = []
 
-  for await(const chunk in response) {
+  for await(const chunk of response) {
     data.push(chunk)
   }
 
