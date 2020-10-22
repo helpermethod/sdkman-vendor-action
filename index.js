@@ -19,7 +19,7 @@ const options = {
   agent: false
 }
 
-request('https://vendors.sdkman.io/release', options, async response => {
+const request = request('https://vendors.sdkman.io/release', options, async response => {
   if (response.statusCode === 201) return
 
   let data = []
