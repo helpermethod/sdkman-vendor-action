@@ -1,5 +1,5 @@
 const core = require('@actions/core')
-const { request } = require('https')
+const https = require('https')
 const { Readable } = require('stream')
 
 const data = JSON.stringify({
@@ -19,7 +19,7 @@ const options = {
   agent: false
 }
 
-const request = request('https://vendors.sdkman.io/release', options, async response => {
+const request = https.request('https://vendors.sdkman.io/release', options, async response => {
   if (response.statusCode === 201) return
 
   let data = []
