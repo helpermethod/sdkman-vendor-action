@@ -20,7 +20,9 @@ const options = {
 }
 
 const request = https.request('https://vendors.sdkman.io/release', options, async response => {
-  if (response.statusCode === 201) return
+  if (response.statusCode === 201) {
+    return
+  }
 
   let data = []
 
