@@ -11,7 +11,7 @@
     "url": "git+https://github.com/helpermethod/sdkman-vendor-release-action.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "helpermethod",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/helpermethod/sdkman-vendor-release-action/issues"
