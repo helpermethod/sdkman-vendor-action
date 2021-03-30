@@ -20,7 +20,7 @@ const options = {
 }
 
 const request = https.request('https://vendors.sdkman.io/release', options, async response => {
-  if (response.statusCode === 201) {
+  if (response.statusCode >= 200 && response.statusCode =< 299) {
     return
   }
 
@@ -30,7 +30,11 @@ const request = https.request('https://vendors.sdkman.io/release', options, asyn
     data.push(chunk)
   }
 
-  core.setFailed(Buffer.concat(data).toString())
+  const body = Buffer.concat(data)
+
+  core.setOutput('status', response.statusCode)
+  core.setOutput('body', message)
+  core.setFailed(body).toString())
 })
 
 Readable.from(data).pipe(request)
